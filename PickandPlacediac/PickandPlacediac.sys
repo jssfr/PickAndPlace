@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<System Name="PickandPlacediac" Comment="">
+	<VersionInfo Version="1.0" Author="jass" Date="2025-12-07">
+	</VersionInfo>
+	<Application Name="PickandPlacediacApp" Comment="">
+		<SubAppNetwork>
+			<FB Name="Sensor_Entrada" Type="SUBSCRIBE_1" Comment="" x="817.6470588235294" y="817.6470588235294">
+				<Parameter Name="QI" Value="1"/>
+				<Parameter Name="ID" Value="&quot;opc_ua[READ;/Objects/Sensores/Sensor Entrada]&quot;"/>
+			</FB>
+			<FB Name="E_F_TRIG" Type="E_F_TRIG" Comment="" x="1999.9999999999998" y="941.1764705882352">
+			</FB>
+			<FB Name="E_RS" Type="E_RS" Comment="" x="3176.4705882352937" y="1058.8235294117646">
+			</FB>
+			<FB Name="Esteira_Entrada" Type="PUBLISH_1" Comment="" x="4117.647058823529" y="823.5294117647059">
+				<Parameter Name="QI" Value="1"/>
+				<Parameter Name="ID" Value="&quot;opc_ua[WRITE;/Objects/Atuadores/Esteira Entrada]&quot;"/>
+			</FB>
+			<FB Name="E_MERGE" Type="E_MERGE" Comment="" x="2117.6470588235293" y="1764.705882352941">
+			</FB>
+			<FB Name="Iniciar" Type="SUBSCRIBE_1" Comment="" x="823.5294117647059" y="1764.705882352941">
+				<Parameter Name="QI" Value="1"/>
+				<Parameter Name="ID" Value="&quot;opc_ua[READ;/Objects/Sensores/Iniciar]&quot;"/>
+			</FB>
+			<EventConnections>
+				<Connection Source="Sensor_Entrada.IND" Destination="E_F_TRIG.EI" Comment="" dx1="194.1176470588235"/>
+				<Connection Source="E_F_TRIG.EO" Destination="E_RS.R" Comment="" dx1="323.52941176470586"/>
+				<Connection Source="E_RS.EO" Destination="Esteira_Entrada.REQ" Comment="" dx1="111.76470588235293"/>
+				<Connection Source="E_MERGE.EO" Destination="E_RS.S" Comment="" dx1="223.52941176470586"/>
+				<Connection Source="Iniciar.IND" Destination="E_MERGE.EI1" Comment="" dx1="247.05882352941174"/>
+			</EventConnections>
+			<DataConnections>
+				<Connection Source="Sensor_Entrada.RD_1" Destination="E_F_TRIG.QI" Comment="" dx1="194.1176470588235"/>
+				<Connection Source="E_RS.Q" Destination="Esteira_Entrada.SD_1" Comment="" dx1="235.2941176470588"/>
+			</DataConnections>
+		</SubAppNetwork>
+	</Application>
+	<Device Name="FORTE_PC" Type="FORTE_PC" Comment="" x="1541.1764705882351" y="805.8823529411765">
+		<Parameter Name="MGR_ID" Value="&quot;localhost:61499&quot;"/>
+		<Attribute Name="Profile" Type="STRING" Value="HOLOBLOC" Comment="device profile"/>
+		<Attribute Name="Color" Type="STRING" Value="255,190,111" Comment="color"/>
+		<Resource Name="EMB_RES" Type="EMB_RES" Comment="" x="0.0" y="0.0">
+			<FBNetwork>
+				<FB Name="E_F_TRIG" Type="E_F_TRIG" Comment="" x="1999.9999999999998" y="941.1764705882352">
+				</FB>
+				<FB Name="Esteira_Entrada" Type="PUBLISH_1" Comment="" x="4117.647058823529" y="823.5294117647059">
+					<Parameter Name="QI" Value="1"/>
+					<Parameter Name="ID" Value="&quot;opc_ua[WRITE;/Objects/Atuadores/Esteira Entrada]&quot;"/>
+				</FB>
+				<FB Name="Sensor_Entrada" Type="SUBSCRIBE_1" Comment="" x="817.6470588235294" y="817.6470588235294">
+					<Parameter Name="QI" Value="1"/>
+					<Parameter Name="ID" Value="&quot;opc_ua[READ;/Objects/Sensores/Sensor Entrada]&quot;"/>
+				</FB>
+				<FB Name="E_RS" Type="E_RS" Comment="" x="3176.4705882352937" y="1058.8235294117646">
+				</FB>
+				<EventConnections>
+					<Connection Source="Sensor_Entrada.IND" Destination="E_F_TRIG.EI" Comment="" dx1="194.1176470588235"/>
+					<Connection Source="E_F_TRIG.EO" Destination="E_RS.R" Comment="" dx1="258.8235294117647"/>
+					<Connection Source="E_RS.EO" Destination="Esteira_Entrada.REQ" Comment="" dx1="235.2941176470588"/>
+					<Connection Source="START.COLD" Destination="Sensor_Entrada.INIT" Comment="" dx1="176.47058823529412"/>
+					<Connection Source="START.WARM" Destination="Sensor_Entrada.INIT" Comment="" dx1="176.47058823529412"/>
+					<Connection Source="START.COLD" Destination="Esteira_Entrada.INIT" Comment="" dx1="1823.5294117647059"/>
+					<Connection Source="START.WARM" Destination="Esteira_Entrada.INIT" Comment="" dx1="1823.5294117647059"/>
+				</EventConnections>
+				<DataConnections>
+					<Connection Source="Sensor_Entrada.RD_1" Destination="E_F_TRIG.QI" Comment="" dx1="194.1176470588235"/>
+					<Connection Source="E_RS.Q" Destination="Esteira_Entrada.SD_1" Comment="" dx1="235.2941176470588"/>
+				</DataConnections>
+			</FBNetwork>
+		</Resource>
+	</Device>
+	<Mapping From="PickandPlacediacApp.E_F_TRIG" To="FORTE_PC.EMB_RES.E_F_TRIG"/>
+	<Mapping From="PickandPlacediacApp.Esteira_Entrada" To="FORTE_PC.EMB_RES.Esteira_Entrada"/>
+	<Mapping From="PickandPlacediacApp.Sensor_Entrada" To="FORTE_PC.EMB_RES.Sensor_Entrada"/>
+	<Mapping From="PickandPlacediacApp.E_RS" To="FORTE_PC.EMB_RES.E_RS"/>
+	<Segment Name="Ethernet" Type="Ethernet" Comment="" x="2982.3529411764703" y="1752.941176470588" dx1="1764.705882352941">
+		<Attribute Name="Color" Type="STRING" Value="73,34,194" Comment="color"/>
+	</Segment>
+	<Link SegmentName="Ethernet" CommResource="FORTE_PC" Comment="">
+	</Link>
+</System>
