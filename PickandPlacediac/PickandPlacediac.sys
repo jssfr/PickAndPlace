@@ -4,27 +4,27 @@
 	</VersionInfo>
 	<Application Name="PickandPlacediacApp" Comment="">
 		<SubAppNetwork>
-			<FB Name="Sensor_Entrada" Type="SUBSCRIBE_1" Comment="Para o funcionamento da esteira de entrada" x="817.6470588235294" y="817.6470588235294">
+			<FB Name="Sensor_Entrada" Type="SUBSCRIBE_1" Comment="Para o funcionamento da esteira de entrada e ativa braço" x="-1294.1176470588234" y="470.5882352941176">
 				<Parameter Name="QI" Value="1"/>
 				<Parameter Name="ID" Value="&quot;opc_ua[READ;/Objects/Sensores/Sensor Entrada]&quot;"/>
 			</FB>
-			<FB Name="E_RS" Type="E_RS" Comment="" x="3176.4705882352937" y="1058.8235294117646">
+			<FB Name="E_RS" Type="E_RS" Comment="" x="2823.529411764706" y="705.8823529411765">
 			</FB>
-			<FB Name="Esteira_Entrada" Type="PUBLISH_1" Comment="" x="4117.647058823529" y="1176.4705882352941">
+			<FB Name="Esteira_Entrada" Type="PUBLISH_1" Comment="" x="4117.647058823529" y="470.5882352941176">
 				<Parameter Name="QI" Value="1"/>
 				<Parameter Name="ID" Value="&quot;opc_ua[WRITE;/Objects/Atuadores/Esteira Entrada]&quot;"/>
 			</FB>
-			<FB Name="E_MERGE" Type="E_MERGE" Comment="" x="2235.2941176470586" y="1647.0588235294117">
+			<FB Name="E_MERGE" Type="E_MERGE" Comment="" x="1411.764705882353" y="1058.8235294117646">
 			</FB>
-			<FB Name="Botao_Iniciar" Type="SUBSCRIBE_1" Comment="Botão responsavel por iniciar o funcionamento da esteira de entrada" x="0.0" y="1764.705882352941">
+			<FB Name="Botao_Iniciar" Type="SUBSCRIBE_1" Comment="Botão responsavel por iniciar o funcionamento da esteira de entrada" x="-1294.1176470588234" y="1647.0588235294117">
 				<Parameter Name="QI" Value="1"/>
 				<Parameter Name="ID" Value="&quot;opc_ua[READ;/Objects/Sensores/Iniciar]&quot;"/>
 			</FB>
-			<FB Name="E_F_TRIG_1" Type="E_F_TRIG" Comment="" x="1176.4705882352941" y="1999.9999999999998">
+			<FB Name="E_F_TRIG_1" Type="E_F_TRIG" Comment="" x="0.0" y="1764.705882352941">
 			</FB>
-			<FB Name="E_R_TRIG" Type="E_R_TRIG" Comment="" x="2211.7647058823527" y="1035.2941176470588">
+			<FB Name="E_R_TRIG" Type="E_R_TRIG" Comment="" x="117.6470588235294" y="705.8823529411765">
 			</FB>
-			<FB Name="Deteccao_Item" Type="SUBSCRIBE_1" Comment="Detecta se tem um item para o braço pegar" x="-235.2941176470588" y="3882.3529411764703">
+			<FB Name="Deteccao_Item" Type="SUBSCRIBE_1" Comment="Detecta se tem um item para o braço pegar" x="-1294.1176470588234" y="3882.3529411764703">
 				<Parameter Name="QI" Value="1"/>
 				<Parameter Name="ID" Value="&quot;opc_ua[READ;/Objects/Sensores/Deteccao Item]&quot;"/>
 			</FB>
@@ -32,52 +32,60 @@
 				<Parameter Name="QI" Value="1"/>
 				<Parameter Name="ID" Value="&quot;opc_ua[WRITE;/Objects/Aturadores/Mover Z]&quot;"/>
 			</FB>
-			<FB Name="E_SR" Type="E_SR" Comment="" x="3294.1176470588234" y="2588.235294117647">
+			<FB Name="E_SR" Type="E_SR" Comment="" x="2941.176470588235" y="2588.235294117647">
 			</FB>
-			<FB Name="Movendo_Z" Type="SUBSCRIBE_1" Comment="" x="-117.6470588235294" y="2941.176470588235">
+			<FB Name="Movendo_Z" Type="SUBSCRIBE_1" Comment="" x="-1294.1176470588234" y="2823.529411764706">
 				<Parameter Name="QI" Value="1"/>
 				<Parameter Name="ID" Value="&quot;opc_ua[READ;/Objects/Sensores/Movendo Z]&quot;"/>
 			</FB>
-			<FB Name="Grab" Type="PUBLISH_1" Comment="Segura os Itens" x="3999.9999999999995" y="3764.705882352941">
+			<FB Name="Grab" Type="PUBLISH_1" Comment="Segura os Itens" x="4235.294117647059" y="3529.411764705882">
 				<Parameter Name="QI" Value="1"/>
 				<Parameter Name="ID" Value="&quot;opc_ua[WRITE;/Objects/Atuadores/Grab]&quot;"/>
 			</FB>
-			<FB Name="E_F_TRIG_3" Type="E_F_TRIG" Comment="" x="1764.705882352941" y="2823.529411764706">
+			<FB Name="E_F_TRIG_3" Type="E_F_TRIG" Comment="" x="0.0" y="2941.176470588235">
 			</FB>
-			<FB Name="E_SR_1" Type="E_SR" Comment="" x="3176.4705882352937" y="3764.705882352941">
+			<FB Name="E_SR_1" Type="E_SR" Comment="" x="2941.176470588235" y="3529.411764705882">
 			</FB>
-			<FB Name="E_R_TRIG_1" Type="E_R_TRIG" Comment="" x="1294.1176470588234" y="4117.647058823529">
+			<FB Name="E_R_TRIG_1" Type="E_R_TRIG" Comment="" x="0.0" y="4117.647058823529">
 			</FB>
-			<FB Name="Sensor_Saida" Type="SUBSCRIBE_1" Comment="Sensor da esteira de saida" x="-235.2941176470588" y="4823.529411764705">
+			<FB Name="Sensor_Saida" Type="SUBSCRIBE_1" Comment="Sensor da esteira de saida" x="-1294.1176470588234" y="4823.529411764705">
 				<Parameter Name="QI" Value="1"/>
 				<Parameter Name="ID" Value="&quot;opc_ua[READ;/Objects/Sensores/Sensor Saida]&quot;"/>
 			</FB>
-			<FB Name="E_R_TRIG_2" Type="E_R_TRIG" Comment="" x="1411.764705882353" y="5058.823529411764">
+			<FB Name="E_R_TRIG_2" Type="E_R_TRIG" Comment="" x="117.6470588235294" y="5058.823529411764">
 			</FB>
-			<FB Name="Movendo_X" Type="SUBSCRIBE_1" Comment="Sensor de movimento direção X do braço" x="-235.2941176470588" y="5882.35294117647">
+			<FB Name="Movendo_X" Type="SUBSCRIBE_1" Comment="Sensor de movimento direção X do braço" x="-1294.1176470588234" y="5882.35294117647">
 				<Parameter Name="QI" Value="1"/>
 				<Parameter Name="ID" Value="&quot;opc_ua[READ;/Objects/Sensores/Movendo X]&quot;"/>
 			</FB>
-			<FB Name="E_F_TRIG" Type="E_F_TRIG" Comment="" x="1058.8235294117646" y="6000.0">
+			<FB Name="E_F_TRIG" Type="E_F_TRIG" Comment="" x="117.6470588235294" y="6000.0">
+			</FB>
+			<FB Name="Led_Verde" Type="PUBLISH_1" Comment="" x="4117.647058823529" y="1411.764705882353">
+				<Parameter Name="QI" Value="1"/>
+				<Parameter Name="ID" Value="&quot;opc_ua[WRITE;/Objects/Atuadores/LED Verde]&quot;"/>
+			</FB>
+			<FB Name="E_SR_2" Type="E_SR" Comment="" x="2941.176470588235" y="1529.4117647058822">
 			</FB>
 			<EventConnections>
 				<Connection Source="E_RS.EO" Destination="Esteira_Entrada.REQ" Comment="" dx1="111.76470588235293"/>
-				<Connection Source="E_MERGE.EO" Destination="E_RS.S" Comment="" dx1="223.52941176470586"/>
+				<Connection Source="E_MERGE.EO" Destination="E_RS.S" Comment="" dx1="394.1176470588235"/>
 				<Connection Source="Botao_Iniciar.IND" Destination="E_F_TRIG_1.EI" Comment="" dx1="188.23529411764704"/>
 				<Connection Source="E_F_TRIG_1.EO" Destination="E_MERGE.EI1" Comment="" dx1="199.99999999999997"/>
 				<Connection Source="Sensor_Entrada.IND" Destination="E_R_TRIG.EI" Comment="" dx1="294.11764705882354"/>
-				<Connection Source="E_R_TRIG.EO" Destination="E_RS.R" Comment="" dx1="147.05882352941177"/>
+				<Connection Source="E_R_TRIG.EO" Destination="E_RS.R" Comment=""/>
 				<Connection Source="E_SR.EO" Destination="Mover_Direcao_Z.REQ" Comment="" dx1="188.23529411764704"/>
 				<Connection Source="E_F_TRIG_3.EO" Destination="E_SR.R" Comment="" dx1="194.1176470588235"/>
 				<Connection Source="E_SR_1.EO" Destination="Grab.REQ" Comment="" dx1="176.47058823529412"/>
 				<Connection Source="Deteccao_Item.IND" Destination="E_R_TRIG_1.EI" Comment="" dx1="188.23529411764704"/>
-				<Connection Source="Movendo_Z.IND" Destination="E_F_TRIG_3.EI" Comment="" dx1="717.6470588235294"/>
+				<Connection Source="Movendo_Z.IND" Destination="E_F_TRIG_3.EI" Comment="" dx1="423.52941176470586"/>
 				<Connection Source="E_R_TRIG.EO" Destination="E_SR.S" Comment="" dx1="211.76470588235293"/>
 				<Connection Source="E_R_TRIG_1.EO" Destination="E_SR_1.S" Comment="" dx1="670.5882352941176"/>
 				<Connection Source="Sensor_Saida.IND" Destination="E_R_TRIG_2.EI" Comment="" dx1="423.52941176470586"/>
 				<Connection Source="E_R_TRIG_2.EO" Destination="E_SR_1.R" Comment="" dx1="552.9411764705882"/>
 				<Connection Source="Movendo_X.IND" Destination="E_F_TRIG.EI" Comment="" dx1="247.05882352941174"/>
-				<Connection Source="E_F_TRIG.EO" Destination="E_MERGE.EI2" Comment="" dx1="258.8235294117647"/>
+				<Connection Source="E_F_TRIG.EO" Destination="E_MERGE.EI2" Comment="" dx1="317.6470588235294"/>
+				<Connection Source="E_SR_2.EO" Destination="Led_Verde.REQ" Comment="" dx1="411.7647058823529"/>
+				<Connection Source="E_F_TRIG_1.EO" Destination="E_SR_2.S" Comment="" dx1="1082.3529411764705"/>
 			</EventConnections>
 			<DataConnections>
 				<Connection Source="E_RS.Q" Destination="Esteira_Entrada.SD_1" Comment="" dx1="235.2941176470588"/>
@@ -85,10 +93,11 @@
 				<Connection Source="Sensor_Entrada.RD_1" Destination="E_R_TRIG.QI" Comment="" dx1="294.11764705882354"/>
 				<Connection Source="E_SR.Q" Destination="Mover_Direcao_Z.SD_1" Comment="" dx1="188.23529411764704"/>
 				<Connection Source="E_SR_1.Q" Destination="Grab.SD_1" Comment="" dx1="176.47058823529412"/>
-				<Connection Source="Movendo_Z.RD_1" Destination="E_F_TRIG_3.QI" Comment="" dx1="1017.6470588235294"/>
+				<Connection Source="Movendo_Z.RD_1" Destination="E_F_TRIG_3.QI" Comment="" dx1="423.52941176470586"/>
 				<Connection Source="Deteccao_Item.RD_1" Destination="E_R_TRIG_1.QI" Comment="" dx1="188.23529411764704"/>
 				<Connection Source="Sensor_Saida.RD_1" Destination="E_R_TRIG_2.QI" Comment="" dx1="423.52941176470586"/>
 				<Connection Source="Movendo_X.RD_1" Destination="E_F_TRIG.QI" Comment="" dx1="247.05882352941174"/>
+				<Connection Source="E_SR_2.Q" Destination="Led_Verde.SD_1" Comment="" dx1="411.7647058823529"/>
 			</DataConnections>
 		</SubAppNetwork>
 	</Application>
@@ -98,17 +107,17 @@
 		<Attribute Name="Color" Type="STRING" Value="255,190,111" Comment="color"/>
 		<Resource Name="EMB_RES" Type="EMB_RES" Comment="" x="0.0" y="0.0">
 			<FBNetwork>
-				<FB Name="Esteira_Entrada" Type="PUBLISH_1" Comment="" x="4117.647058823529" y="823.5294117647059">
+				<FB Name="Esteira_Entrada" Type="PUBLISH_1" Comment="" x="4117.647058823529" y="588.2352941176471">
 					<Parameter Name="QI" Value="1"/>
 					<Parameter Name="ID" Value="&quot;opc_ua[WRITE;/Objects/Atuadores/Esteira Entrada]&quot;"/>
 				</FB>
-				<FB Name="Sensor_Entrada" Type="SUBSCRIBE_1" Comment="" x="817.6470588235294" y="817.6470588235294">
+				<FB Name="Sensor_Entrada" Type="SUBSCRIBE_1" Comment="" x="-117.6470588235294" y="705.8823529411765">
 					<Parameter Name="QI" Value="1"/>
 					<Parameter Name="ID" Value="&quot;opc_ua[READ;/Objects/Sensores/Sensor Entrada]&quot;"/>
 				</FB>
-				<FB Name="E_RS" Type="E_RS" Comment="" x="3176.4705882352937" y="1058.8235294117646">
+				<FB Name="E_RS" Type="E_RS" Comment="" x="2823.529411764706" y="941.1764705882352">
 				</FB>
-				<FB Name="Botao_Iniciar" Type="SUBSCRIBE_1" Comment="" x="823.5294117647059" y="1764.705882352941">
+				<FB Name="Botao_Iniciar" Type="SUBSCRIBE_1" Comment="" x="-117.6470588235294" y="1882.3529411764705">
 					<Parameter Name="QI" Value="1"/>
 					<Parameter Name="ID" Value="&quot;opc_ua[READ;/Objects/Sensores/Iniciar]&quot;"/>
 				</FB>
@@ -116,7 +125,7 @@
 				</FB>
 				<FB Name="E_F_TRIG_1" Type="E_F_TRIG" Comment="" x="1176.4705882352941" y="1999.9999999999998">
 				</FB>
-				<FB Name="E_R_TRIG" Type="E_R_TRIG" Comment="" x="2211.7647058823527" y="1035.2941176470588">
+				<FB Name="E_R_TRIG" Type="E_R_TRIG" Comment="" x="1176.4705882352941" y="1058.8235294117646">
 				</FB>
 				<FB Name="Mover_Direcao_Z" Type="PUBLISH_1" Comment="" x="4117.647058823529" y="2352.9411764705883">
 					<Parameter Name="QI" Value="1"/>
@@ -146,7 +155,7 @@
 					<Parameter Name="QI" Value="1"/>
 					<Parameter Name="ID" Value="&quot;opc_ua[READ;/Objects/Sensores/Sensor Saida]&quot;"/>
 				</FB>
-				<FB Name="E_R_TRIG_2" Type="E_R_TRIG" Comment="" x="1411.764705882353" y="5058.823529411764">
+				<FB Name="E_R_TRIG_2" Type="E_R_TRIG" Comment="" x="1411.764705882353" y="5052.941176470588">
 				</FB>
 				<FB Name="Movendo_X" Type="SUBSCRIBE_1" Comment="" x="-235.2941176470588" y="5882.35294117647">
 					<Parameter Name="QI" Value="1"/>
@@ -154,53 +163,64 @@
 				</FB>
 				<FB Name="E_F_TRIG" Type="E_F_TRIG" Comment="" x="1058.8235294117646" y="6000.0">
 				</FB>
+				<FB Name="E_SR_2" Type="E_SR" Comment="" x="2941.176470588235" y="1764.705882352941">
+				</FB>
+				<FB Name="Led_Verde" Type="PUBLISH_1" Comment="" x="4117.647058823529" y="1529.4117647058822">
+					<Parameter Name="QI" Value="1"/>
+					<Parameter Name="ID" Value="&quot;opc_ua[WRITE;/Objects/Atuadores/LED Verde]&quot;"/>
+				</FB>
 				<EventConnections>
 					<Connection Source="E_RS.EO" Destination="Esteira_Entrada.REQ" Comment="" dx1="235.2941176470588"/>
 					<Connection Source="START.COLD" Destination="Sensor_Entrada.INIT" Comment="" dx1="176.47058823529412"/>
 					<Connection Source="START.WARM" Destination="Sensor_Entrada.INIT" Comment="" dx1="176.47058823529412"/>
 					<Connection Source="START.COLD" Destination="Esteira_Entrada.INIT" Comment="" dx1="1823.5294117647059"/>
 					<Connection Source="START.WARM" Destination="Esteira_Entrada.INIT" Comment="" dx1="1823.5294117647059"/>
-					<Connection Source="E_MERGE.EO" Destination="E_RS.S" Comment="" dx1="223.52941176470586"/>
-					<Connection Source="START.COLD" Destination="Botao_Iniciar.INIT" Comment="" dx1="411.7647058823529"/>
-					<Connection Source="START.WARM" Destination="Botao_Iniciar.INIT" Comment="" dx1="411.7647058823529"/>
-					<Connection Source="Botao_Iniciar.IND" Destination="E_F_TRIG_1.EI" Comment="" dx1="70.58823529411764" dx2="70.58823529411764" dy="64.70588235294117"/>
+					<Connection Source="E_MERGE.EO" Destination="E_RS.S" Comment="" dx1="70.58823529411764" dx2="70.58823529411764" dy="-358.8235294117647"/>
+					<Connection Source="START.COLD" Destination="Botao_Iniciar.INIT" Comment="" dx1="529.4117647058823"/>
+					<Connection Source="START.WARM" Destination="Botao_Iniciar.INIT" Comment="" dx1="529.4117647058823"/>
+					<Connection Source="Botao_Iniciar.IND" Destination="E_F_TRIG_1.EI" Comment="" dx1="129.41176470588235"/>
 					<Connection Source="E_F_TRIG_1.EO" Destination="E_MERGE.EI1" Comment="" dx1="141.17647058823528"/>
 					<Connection Source="Sensor_Entrada.IND" Destination="E_R_TRIG.EI" Comment="" dx1="300.0"/>
-					<Connection Source="E_R_TRIG.EO" Destination="E_RS.R" Comment="" dx1="152.94117647058823"/>
+					<Connection Source="E_R_TRIG.EO" Destination="E_RS.R" Comment="" dx1="494.1176470588235"/>
 					<Connection Source="E_SR.EO" Destination="Mover_Direcao_Z.REQ" Comment="" dx1="188.23529411764704"/>
 					<Connection Source="E_F_TRIG_3.EO" Destination="E_SR.R" Comment="" dx1="70.58823529411764" dx2="70.58823529411764" dy="-811.7647058823529"/>
-					<Connection Source="START.COLD" Destination="Deteccao_Item.INIT" Comment="" dx1="70.58823529411764" dx2="70.58823529411764" dy="1470.5882352941176"/>
-					<Connection Source="START.WARM" Destination="Deteccao_Item.INIT" Comment="" dx1="70.58823529411764" dx2="70.58823529411764" dy="1423.5294117647059"/>
+					<Connection Source="START.COLD" Destination="Deteccao_Item.INIT" Comment="" dx1="470.5882352941176"/>
+					<Connection Source="START.WARM" Destination="Deteccao_Item.INIT" Comment="" dx1="470.5882352941176"/>
 					<Connection Source="START.COLD" Destination="Mover_Direcao_Z.INIT" Comment="" dx1="1658.8235294117646"/>
 					<Connection Source="START.WARM" Destination="Mover_Direcao_Z.INIT" Comment="" dx1="1658.8235294117646"/>
-					<Connection Source="START.WARM" Destination="Movendo_Z.INIT" Comment="" dx1="70.58823529411764" dx2="70.58823529411764" dy="1952.941176470588"/>
-					<Connection Source="START.COLD" Destination="Movendo_Z.INIT" Comment="" dx1="70.58823529411764" dx2="70.58823529411764" dy="1999.9999999999998"/>
+					<Connection Source="START.WARM" Destination="Movendo_Z.INIT" Comment="" dx1="470.5882352941176"/>
+					<Connection Source="START.COLD" Destination="Movendo_Z.INIT" Comment="" dx1="470.5882352941176"/>
 					<Connection Source="START.COLD" Destination="Grab.INIT" Comment="" dx1="817.6470588235294"/>
 					<Connection Source="START.WARM" Destination="Grab.INIT" Comment="" dx1="817.6470588235294"/>
-					<Connection Source="E_SR_1.EO" Destination="Grab.REQ" Comment="" dx1="170.58823529411762"/>
+					<Connection Source="E_SR_1.EO" Destination="Grab.REQ" Comment="" dx1="164.70588235294116"/>
 					<Connection Source="Deteccao_Item.IND" Destination="E_R_TRIG_1.EI" Comment="" dx1="188.23529411764704"/>
 					<Connection Source="Movendo_Z.IND" Destination="E_F_TRIG_3.EI" Comment="" dx1="894.1176470588234"/>
 					<Connection Source="E_R_TRIG.EO" Destination="E_SR.S" Comment="" dx1="199.99999999999997"/>
-					<Connection Source="E_R_TRIG_1.EO" Destination="E_SR_1.S" Comment="" dx1="70.58823529411764" dx2="70.58823529411764" dy="1064.705882352941"/>
-					<Connection Source="START.COLD" Destination="Sensor_Saida.INIT" Comment="" dx1="70.58823529411764" dx2="70.58823529411764" dy="2411.7647058823527"/>
-					<Connection Source="START.WARM" Destination="Sensor_Saida.INIT" Comment="" dx1="70.58823529411764" dx2="70.58823529411764" dy="2364.705882352941"/>
+					<Connection Source="E_R_TRIG_1.EO" Destination="E_SR_1.S" Comment="" dx1="70.58823529411764" dx2="70.58823529411764" dy="1058.8235294117646"/>
+					<Connection Source="START.COLD" Destination="Sensor_Saida.INIT" Comment="" dx1="352.94117647058823"/>
+					<Connection Source="START.WARM" Destination="Sensor_Saida.INIT" Comment="" dx1="352.94117647058823"/>
 					<Connection Source="Sensor_Saida.IND" Destination="E_R_TRIG_2.EI" Comment="" dx1="423.52941176470586"/>
 					<Connection Source="E_R_TRIG_2.EO" Destination="E_SR_1.R" Comment="" dx1="70.58823529411764" dx2="70.58823529411764" dy="52.94117647058823"/>
 					<Connection Source="Movendo_X.IND" Destination="E_F_TRIG.EI" Comment="" dx1="247.05882352941174"/>
 					<Connection Source="E_F_TRIG.EO" Destination="E_MERGE.EI2" Comment="" dx1="199.99999999999997"/>
-					<Connection Source="START.COLD" Destination="Movendo_X.INIT" Comment="" dx1="70.58823529411764" dx2="70.58823529411764" dy="2941.176470588235"/>
-					<Connection Source="START.WARM" Destination="Movendo_X.INIT" Comment="" dx1="70.58823529411764" dx2="70.58823529411764" dy="2894.1176470588234"/>
+					<Connection Source="START.COLD" Destination="Movendo_X.INIT" Comment="" dx1="352.94117647058823"/>
+					<Connection Source="START.WARM" Destination="Movendo_X.INIT" Comment="" dx1="352.94117647058823"/>
+					<Connection Source="E_F_TRIG_1.EO" Destination="E_SR_2.S" Comment="" dx1="552.9411764705882"/>
+					<Connection Source="E_SR_2.EO" Destination="Led_Verde.REQ" Comment="" dx1="352.94117647058823"/>
+					<Connection Source="START.COLD" Destination="Led_Verde.INIT" Comment="" dx1="2529.411764705882"/>
+					<Connection Source="START.WARM" Destination="Led_Verde.INIT" Comment="" dx1="2529.411764705882"/>
 				</EventConnections>
 				<DataConnections>
 					<Connection Source="E_RS.Q" Destination="Esteira_Entrada.SD_1" Comment="" dx1="235.2941176470588"/>
-					<Connection Source="Botao_Iniciar.RD_1" Destination="E_F_TRIG_1.QI" Comment="" dx1="70.58823529411764" dx2="70.58823529411764" dy="-29.41176470588235"/>
+					<Connection Source="Botao_Iniciar.RD_1" Destination="E_F_TRIG_1.QI" Comment="" dx1="129.41176470588235"/>
 					<Connection Source="Sensor_Entrada.RD_1" Destination="E_R_TRIG.QI" Comment="" dx1="300.0"/>
 					<Connection Source="E_SR.Q" Destination="Mover_Direcao_Z.SD_1" Comment="" dx1="188.23529411764704"/>
-					<Connection Source="E_SR_1.Q" Destination="Grab.SD_1" Comment="" dx1="170.58823529411762"/>
+					<Connection Source="E_SR_1.Q" Destination="Grab.SD_1" Comment="" dx1="164.70588235294116"/>
 					<Connection Source="Movendo_Z.RD_1" Destination="E_F_TRIG_3.QI" Comment="" dx1="894.1176470588234"/>
 					<Connection Source="Deteccao_Item.RD_1" Destination="E_R_TRIG_1.QI" Comment="" dx1="188.23529411764704"/>
 					<Connection Source="Sensor_Saida.RD_1" Destination="E_R_TRIG_2.QI" Comment="" dx1="423.52941176470586"/>
 					<Connection Source="Movendo_X.RD_1" Destination="E_F_TRIG.QI" Comment="" dx1="247.05882352941174"/>
+					<Connection Source="E_SR_2.Q" Destination="Led_Verde.SD_1" Comment="" dx1="352.94117647058823"/>
 				</DataConnections>
 			</FBNetwork>
 		</Resource>
@@ -224,6 +244,8 @@
 	<Mapping From="PickandPlacediacApp.E_R_TRIG_2" To="FORTE_PC.EMB_RES.E_R_TRIG_2"/>
 	<Mapping From="PickandPlacediacApp.Movendo_X" To="FORTE_PC.EMB_RES.Movendo_X"/>
 	<Mapping From="PickandPlacediacApp.E_F_TRIG" To="FORTE_PC.EMB_RES.E_F_TRIG"/>
+	<Mapping From="PickandPlacediacApp.E_SR_2" To="FORTE_PC.EMB_RES.E_SR_2"/>
+	<Mapping From="PickandPlacediacApp.Led_Verde" To="FORTE_PC.EMB_RES.Led_Verde"/>
 	<Segment Name="Ethernet" Type="Ethernet" Comment="" x="2982.3529411764703" y="1752.941176470588" dx1="1764.705882352941">
 		<Attribute Name="Color" Type="STRING" Value="73,34,194" Comment="color"/>
 	</Segment>
