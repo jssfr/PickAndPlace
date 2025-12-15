@@ -93,7 +93,7 @@
 			</FB>
 			<FB Name="E_R_TRIG_6" Type="E_R_TRIG" Comment="" x="-1411.764705882353" y="1647.0588235294117">
 			</FB>
-			<FB Name="E_PERMIT" Type="E_PERMIT" Comment="" x="-823.5294117647059" y="5294.117647058823">
+			<FB Name="E_PERMIT" Type="E_PERMIT" Comment="" x="-823.5294117647059" y="4823.529411764705">
 			</FB>
 			<FB Name="E_SWITCH_1" Type="E_SWITCH" Comment="" x="-1529.4117647058822" y="3882.3529411764703">
 			</FB>
@@ -137,17 +137,13 @@
 			<FB Name="E_DELAY_3" Type="E_DELAY" Comment="" x="-588.2352941176471" y="1176.4705882352941">
 				<Parameter Name="DT" Value="T#2s"/>
 			</FB>
-			<FB Name="Parada_Emergencia" Type="SUBSCRIBE_1" Comment="" x="-3058.8235294117644" y="11294.117647058823">
-				<Parameter Name="QI" Value="1"/>
-				<Parameter Name="ID" Value="&quot;opc_ua[READ;/Objects/Sensores/Parada Emergencia]&quot;"/>
-			</FB>
-			<FB Name="Botao_stop" Type="SUBSCRIBE_1" Comment="" x="-3058.8235294117644" y="12235.294117647058">
+			<FB Name="Botao_stop" Type="SUBSCRIBE_1" Comment="" x="-3176.4705882352937" y="11294.117647058823">
 				<Parameter Name="QI" Value="1"/>
 				<Parameter Name="ID" Value="&quot;opc_ua[READ;/Objects/Sensores/Botao Stop]&quot;"/>
 			</FB>
-			<FB Name="BotaoStop" Type="BOOL2BOOL" Comment="" x="-1882.3529411764705" y="12470.588235294117">
+			<FB Name="BotaoStop" Type="BOOL2BOOL" Comment="" x="-1999.9999999999998" y="11529.411764705881">
 			</FB>
-			<FB Name="E_R_TRIG_1" Type="E_R_TRIG" Comment="" x="-705.8823529411765" y="12588.235294117647">
+			<FB Name="E_R_TRIG_1" Type="E_R_TRIG" Comment="" x="-823.5294117647059" y="11647.05882352941">
 			</FB>
 			<FB Name="E_MERGE_2" Type="E_MERGE" Comment="" x="1764.705882352941" y="470.5882352941176">
 			</FB>
@@ -163,7 +159,9 @@
 			</FB>
 			<FB Name="movendoX" Type="BOOL2BOOL" Comment="" x="-1764.705882352941" y="6117.647058823529">
 			</FB>
-			<FB Name="Ssaida" Type="BOOL2BOOL" Comment="" x="-1764.705882352941" y="5058.823529411764">
+			<FB Name="Ssaida" Type="BOOL2BOOL" Comment="" x="-1764.705882352941" y="5052.941176470588">
+			</FB>
+			<FB Name="E_R_TRIG_2" Type="E_R_TRIG" Comment="" x="-588.2352941176471" y="5411.764705882352">
 			</FB>
 			<EventConnections>
 				<Connection Source="E_MERGE.EO" Destination="RS_Esteira_Entrada.S" Comment="" dx1="394.1176470588235"/>
@@ -207,7 +205,6 @@
 				<Connection Source="E_DELAY_2.EO" Destination="E_REND_2.EI2" Comment="" dx1="811.7647058823529"/>
 				<Connection Source="E_R_TRIG.EO" Destination="E_DELAY_3.START" Comment="" dx1="199.99999999999997"/>
 				<Connection Source="E_DELAY_3.EO" Destination="E_MERGE_1.EI1" Comment="" dx1="811.7647058823529"/>
-				<Connection Source="E_PERMIT.EO" Destination="Contador_CTU.CU" Comment="" dx1="1270.5882352941176"/>
 				<Connection Source="Botao_stop.IND" Destination="BotaoStop.REQ" Comment="" dx1="188.23529411764704"/>
 				<Connection Source="BotaoStop.CNF" Destination="E_R_TRIG_1.EI" Comment="" dx1="235.2941176470588"/>
 				<Connection Source="E_R_TRIG_1.EO" Destination="SR_Led_Verde.R" Comment="" dx1="1517.6470588235293"/>
@@ -226,7 +223,9 @@
 				<Connection Source="movendoX.CNF" Destination="E_F_TRIG.EI" Comment="" dx1="117.6470588235294"/>
 				<Connection Source="Sensor_Saida.IND" Destination="Ssaida.REQ" Comment="" dx1="305.88235294117646"/>
 				<Connection Source="Ssaida.CNF" Destination="E_PERMIT.EI" Comment="" dx1="117.6470588235294"/>
-				<Connection Source="RS_Esteira_Entrada.EO" Destination="Esteira_Entrada.REQ" Comment="" dx1="1494.1176470588234"/>
+				<Connection Source="Ssaida.CNF" Destination="E_R_TRIG_2.EI" Comment="" dx1="235.2941176470588"/>
+				<Connection Source="E_R_TRIG_2.EO" Destination="Contador_CTU.CU" Comment="" dx1="917.6470588235294"/>
+				<Connection Source="RS_Esteira_Entrada.EO" Destination="Esteira_Entrada.REQ" Comment="" dx1="1500.0"/>
 				<Connection Source="SR_Led_Verde.EO" Destination="Led_Verde.REQ" Comment="" dx1="1505.8823529411764"/>
 				<Connection Source="SR_MvZ.EO" Destination="Mover_Direcao_Z.REQ" Comment="" dx1="1411.764705882353"/>
 				<Connection Source="SR_MvX.EO" Destination="Move_Direcao_X.REQ" Comment="" dx1="1411.764705882353"/>
@@ -254,7 +253,8 @@
 				<Connection Source="movendoX.OUT" Destination="E_F_TRIG.QI" Comment="" dx1="117.6470588235294"/>
 				<Connection Source="Sensor_Saida.RD_1" Destination="Ssaida.IN" Comment="" dx1="305.88235294117646"/>
 				<Connection Source="Ssaida.OUT" Destination="E_PERMIT.PERMIT" Comment="" dx1="117.6470588235294"/>
-				<Connection Source="RS_Esteira_Entrada.Q" Destination="Esteira_Entrada.SD_1" Comment="" dx1="1494.1176470588234"/>
+				<Connection Source="Ssaida.OUT" Destination="E_R_TRIG_2.QI" Comment="" dx1="235.2941176470588"/>
+				<Connection Source="RS_Esteira_Entrada.Q" Destination="Esteira_Entrada.SD_1" Comment="" dx1="1500.0"/>
 				<Connection Source="SR_Led_Verde.Q" Destination="Led_Verde.SD_1" Comment="" dx1="1505.8823529411764"/>
 				<Connection Source="SR_MvZ.Q" Destination="Mover_Direcao_Z.SD_1" Comment="" dx1="1411.764705882353"/>
 				<Connection Source="SR_MvX.Q" Destination="Move_Direcao_X.SD_1" Comment="" dx1="1411.764705882353"/>
@@ -401,10 +401,6 @@
 				<FB Name="E_DELAY_3" Type="E_DELAY" Comment="" x="-588.2352941176471" y="1176.4705882352941">
 					<Parameter Name="DT" Value="T#2s"/>
 				</FB>
-				<FB Name="Parada_Emergencia" Type="SUBSCRIBE_1" Comment="" x="-3058.8235294117644" y="11294.117647058823">
-					<Parameter Name="QI" Value="1"/>
-					<Parameter Name="ID" Value="&quot;opc_ua[READ;/Objects/Sensores/Parada Emergencia]&quot;"/>
-				</FB>
 				<FB Name="Botao_stop" Type="SUBSCRIBE_1" Comment="" x="-3058.8235294117644" y="12235.294117647058">
 					<Parameter Name="QI" Value="1"/>
 					<Parameter Name="ID" Value="&quot;opc_ua[READ;/Objects/Sensores/Botao Stop]&quot;"/>
@@ -427,7 +423,9 @@
 				</FB>
 				<FB Name="movendoX" Type="BOOL2BOOL" Comment="" x="-1764.705882352941" y="6117.647058823529">
 				</FB>
-				<FB Name="Ssaida" Type="BOOL2BOOL" Comment="" x="-1764.705882352941" y="5058.823529411764">
+				<FB Name="Ssaida" Type="BOOL2BOOL" Comment="" x="-1764.705882352941" y="5052.941176470588">
+				</FB>
+				<FB Name="E_R_TRIG_2" Type="E_R_TRIG" Comment="" x="-588.2352941176471" y="5411.764705882352">
 				</FB>
 				<EventConnections>
 					<Connection Source="START.COLD" Destination="Sensor_Entrada.INIT" Comment="" dx1="176.47058823529412"/>
@@ -505,11 +503,10 @@
 					<Connection Source="E_DELAY_2.EO" Destination="E_REND_2.EI2" Comment="" dx1="811.7647058823529"/>
 					<Connection Source="E_R_TRIG.EO" Destination="E_DELAY_3.START" Comment="" dx1="199.99999999999997"/>
 					<Connection Source="E_DELAY_3.EO" Destination="E_MERGE_1.EI1" Comment="" dx1="988.235294117647"/>
-					<Connection Source="E_PERMIT.EO" Destination="Contador_CTU.CU" Comment="" dx1="1270.5882352941176"/>
 					<Connection Source="Botao_stop.IND" Destination="BotaoStop.REQ" Comment="" dx1="188.23529411764704"/>
 					<Connection Source="BotaoStop.CNF" Destination="E_R_TRIG_1.EI" Comment="" dx1="235.2941176470588"/>
 					<Connection Source="E_R_TRIG_1.EO" Destination="SR_Led_Verde.R" Comment="" dx1="1517.6470588235293"/>
-					<Connection Source="E_R_TRIG.EO" Destination="E_MERGE_2.EI1" Comment="" dx1="1376.470588235294"/>
+					<Connection Source="E_R_TRIG.EO" Destination="E_MERGE_2.EI1" Comment="" dx1="1370.5882352941176"/>
 					<Connection Source="E_R_TRIG_1.EO" Destination="E_MERGE_2.EI2" Comment="" dx1="905.8823529411764"/>
 					<Connection Source="E_MERGE_2.EO" Destination="RS_Esteira_Entrada.R" Comment="" dx1="317.6470588235294"/>
 					<Connection Source="E_SWITCH_2.EO1" Destination="E_MERGE_3.EI1" Comment="" dx1="788.235294117647"/>
@@ -526,15 +523,15 @@
 					<Connection Source="Ssaida.CNF" Destination="E_PERMIT.EI" Comment="" dx1="70.58823529411764" dx2="70.58823529411764" dy="117.6470588235294"/>
 					<Connection Source="START.COLD" Destination="Botao_stop.INIT" Comment="" dx1="70.58823529411764" dx2="70.58823529411764" dy="6117.647058823529"/>
 					<Connection Source="START.WARM" Destination="Botao_stop.INIT" Comment="" dx1="70.58823529411764" dx2="70.58823529411764" dy="6064.7058823529405"/>
-					<Connection Source="START.COLD" Destination="Parada_Emergencia.INIT" Comment="" dx1="70.58823529411764" dx2="70.58823529411764" dy="5647.058823529412"/>
-					<Connection Source="START.WARM" Destination="Parada_Emergencia.INIT" Comment="" dx1="70.58823529411764" dx2="70.58823529411764" dy="5594.117647058823"/>
 					<Connection Source="START.COLD" Destination="Led_Vermelho.INIT" Comment="" dx1="2064.705882352941"/>
 					<Connection Source="START.WARM" Destination="Led_Vermelho.INIT" Comment="" dx1="2064.705882352941"/>
-					<Connection Source="RS_Esteira_Entrada.EO" Destination="Esteira_Entrada.REQ" Comment="" dx1="317.6470588235294"/>
-					<Connection Source="SR_Led_Verde.EO" Destination="Led_Verde.REQ" Comment="" dx1="323.52941176470586"/>
-					<Connection Source="SR_MvZ.EO" Destination="Mover_Direcao_Z.REQ" Comment="" dx1="182.35294117647058"/>
-					<Connection Source="SR_MvX.EO" Destination="Move_Direcao_X.REQ" Comment="" dx1="294.11764705882354"/>
-					<Connection Source="SR_Esteira_Saida.EO" Destination="Esteira_Saida.REQ" Comment="" dx1="223.52941176470586"/>
+					<Connection Source="RS_Esteira_Entrada.EO" Destination="Esteira_Entrada.REQ" Comment=""/>
+					<Connection Source="SR_Led_Verde.EO" Destination="Led_Verde.REQ" Comment=""/>
+					<Connection Source="SR_MvZ.EO" Destination="Mover_Direcao_Z.REQ" Comment=""/>
+					<Connection Source="SR_MvX.EO" Destination="Move_Direcao_X.REQ" Comment=""/>
+					<Connection Source="SR_Esteira_Saida.EO" Destination="Esteira_Saida.REQ" Comment=""/>
+					<Connection Source="Ssaida.CNF" Destination="E_R_TRIG_2.EI" Comment=""/>
+					<Connection Source="E_R_TRIG_2.EO" Destination="Contador_CTU.CU" Comment=""/>
 				</EventConnections>
 				<DataConnections>
 					<Connection Source="SR_Grab.Q" Destination="Grab.SD_1" Comment="" dx1="164.70588235294116"/>
@@ -558,11 +555,12 @@
 					<Connection Source="movendoX.OUT" Destination="E_F_TRIG.QI" Comment="" dx1="1058.8235294117646"/>
 					<Connection Source="Sensor_Saida.RD_1" Destination="Ssaida.IN" Comment="" dx1="70.58823529411764" dx2="70.58823529411764" dy="-29.41176470588235"/>
 					<Connection Source="Ssaida.OUT" Destination="E_PERMIT.PERMIT" Comment="" dx1="70.58823529411764" dx2="70.58823529411764" dy="117.6470588235294"/>
-					<Connection Source="RS_Esteira_Entrada.Q" Destination="Esteira_Entrada.SD_1" Comment="" dx1="317.6470588235294"/>
-					<Connection Source="SR_Led_Verde.Q" Destination="Led_Verde.SD_1" Comment="" dx1="323.52941176470586"/>
-					<Connection Source="SR_MvZ.Q" Destination="Mover_Direcao_Z.SD_1" Comment="" dx1="182.35294117647058"/>
-					<Connection Source="SR_MvX.Q" Destination="Move_Direcao_X.SD_1" Comment="" dx1="294.11764705882354"/>
-					<Connection Source="SR_Esteira_Saida.Q" Destination="Esteira_Saida.SD_1" Comment="" dx1="223.52941176470586"/>
+					<Connection Source="RS_Esteira_Entrada.Q" Destination="Esteira_Entrada.SD_1" Comment=""/>
+					<Connection Source="SR_Led_Verde.Q" Destination="Led_Verde.SD_1" Comment=""/>
+					<Connection Source="SR_MvZ.Q" Destination="Mover_Direcao_Z.SD_1" Comment=""/>
+					<Connection Source="SR_MvX.Q" Destination="Move_Direcao_X.SD_1" Comment=""/>
+					<Connection Source="SR_Esteira_Saida.Q" Destination="Esteira_Saida.SD_1" Comment=""/>
+					<Connection Source="Ssaida.OUT" Destination="E_R_TRIG_2.QI" Comment=""/>
 				</DataConnections>
 			</FBNetwork>
 		</Resource>
@@ -614,7 +612,6 @@
 	<Mapping From="PickandPlacediacApp.E_DELAY_1" To="FORTE_PC.EMB_RES.E_DELAY_1"/>
 	<Mapping From="PickandPlacediacApp.E_DELAY_2" To="FORTE_PC.EMB_RES.E_DELAY_2"/>
 	<Mapping From="PickandPlacediacApp.E_DELAY_3" To="FORTE_PC.EMB_RES.E_DELAY_3"/>
-	<Mapping From="PickandPlacediacApp.Parada_Emergencia" To="FORTE_PC.EMB_RES.Parada_Emergencia"/>
 	<Mapping From="PickandPlacediacApp.Botao_stop" To="FORTE_PC.EMB_RES.Botao_stop"/>
 	<Mapping From="PickandPlacediacApp.BotaoStop" To="FORTE_PC.EMB_RES.BotaoStop"/>
 	<Mapping From="PickandPlacediacApp.E_R_TRIG_1" To="FORTE_PC.EMB_RES.E_R_TRIG_1"/>
@@ -625,6 +622,7 @@
 	<Mapping From="PickandPlacediacApp.reset" To="FORTE_PC.EMB_RES.reset"/>
 	<Mapping From="PickandPlacediacApp.movendoX" To="FORTE_PC.EMB_RES.movendoX"/>
 	<Mapping From="PickandPlacediacApp.Ssaida" To="FORTE_PC.EMB_RES.Ssaida"/>
+	<Mapping From="PickandPlacediacApp.E_R_TRIG_2" To="FORTE_PC.EMB_RES.E_R_TRIG_2"/>
 	<Segment Name="Ethernet" Type="Ethernet" Comment="" x="2982.3529411764703" y="1752.941176470588" dx1="1764.705882352941">
 		<Attribute Name="Color" Type="STRING" Value="73,34,194" Comment="color"/>
 	</Segment>
